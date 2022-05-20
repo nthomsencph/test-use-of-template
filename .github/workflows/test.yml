@@ -34,4 +34,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Update wiki
         run: |
-          echo running on ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          echo running on https://github.com/nthomsencph/proto-template.wiki.git
+          
+          git clone git@${{ github.server_url }}/${{ github.repository }}.wiki.git template-wiki
+          cd template-wiki
+          git remote rename origin oldorigin
+          git remote add origin git@${{ github.server_url }}/${{ github.repository }}.wiki.git
+          git fetch origin
+          git push --force
+          
