@@ -35,10 +35,10 @@ jobs:
       - name: Update wiki
         run: |
           echo running on https://github.com/nthomsencph/proto-template.wiki.git
-          echo git@github.com:nthomsencph/${{ github.repository }}
+          echo https://github.com/nthomsencph{{ github.repository }}
           
           
-          git clone git@github.com:nthomsencph/test-use-of-template.git template-wiki
+          git clone https://github.com/nthomsencph/test-use-of-template.git template-wiki
           cd template-wiki
           git remote rename origin oldorigin
           git remote add origin git@github.com:nthomsencph/${{ github.repository }}.wiki.git
