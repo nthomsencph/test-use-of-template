@@ -34,5 +34,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Update wiki
         run: |
-          echo running on branch ${GITHUB_REF}
-
+          echo running on ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
