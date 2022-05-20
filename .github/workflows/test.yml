@@ -40,8 +40,9 @@ jobs:
           
           git clone https://github.com/nthomsencph/test-use-of-template.git template-wiki
           cd template-wiki
+          echo switching remote..
           git remote rename origin oldorigin
-          git remote add origin git@github.com:nthomsencph/${{ github.repository }}.wiki.git
+          git remote add origin https://github.com/nthomsencph/${{ github.repository }}.wiki.git
           git fetch origin
           git push --force
           
