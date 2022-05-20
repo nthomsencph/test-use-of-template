@@ -1,0 +1,37 @@
+site_name: DXP docs template
+docs_dir: docs/
+theme:
+  name: "material"
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Necessary for search to work properly
+  include_search_page: false
+  search_index_only: false
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+plugins:
+- search
+- mkdocstrings:
+    default_handler: python
+    handlers:
+      python:
+        rendering:
+          show_source: true
+    custom_templates: templates
+    watch:
+      - src
+- gen-files:
+    scripts:
+      - .github/scripts/gen_pages.py  
+
