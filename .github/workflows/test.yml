@@ -36,10 +36,10 @@ jobs:
         run: |
           echo running on https://github.com/nthomsencph/proto-template.wiki.git
           
-          git clone git@${{ github.server_url }}/${{ github.repository }}.wiki.git template-wiki
+          git clone ${{ github.server_url }}/${{ github.repository }}.wiki.git template-wiki
           cd template-wiki
           git remote rename origin oldorigin
-          git remote add origin git@${{ github.server_url }}/${{ github.repository }}.wiki.git
+          git remote add origin ${{ github.server_url }}/${{ github.repository }}.wiki.git
           git fetch origin
           git push --force
           
